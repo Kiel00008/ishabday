@@ -1,0 +1,134 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* =========================
+   MEMORIES SECTION
+========================= */
+
+.memories-section{
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.memories-title{
+    font-size: 3rem;
+    color: #ff4f9a;
+    margin-bottom: 10px;
+}
+
+.memories-subtitle{
+    color: white;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.gallery-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 25px;
+}
+
+.memory-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.memory-card img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.memory-card:hover img{
+    transform: scale(1.1);
+}
+
+.memory-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.8),
+        transparent
+    );
+
+    color: white;
+    text-align: left;
+}
+
+.memory-overlay h3{
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.memory-overlay p{
+    font-size: 0.9rem;
+}
+
+/* =========================
+   VIDEO SECTION
+========================= */
+
+.video-section{
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.video-title{
+    font-size: 2.5rem;
+    color: #ff4f9a;
+    margin-bottom: 30px;
+}
+
+.video-container{
+    max-width: 900px;
+    margin: auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.video-container video{
+    width: 100%;
+    display: block;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade-in-up{
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
